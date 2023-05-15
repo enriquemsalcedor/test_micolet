@@ -48,14 +48,14 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-#formularios anidados
+#gema para hacer uso de formularios anidados
 gem 'nested_form'
 gem 'jquery-rails'
-# validaciones del lado del cliente
+# gema para validaciones del lado del cliente
 gem 'client_side_validations'
-# validar formatos de email
+# gema para validar formatos de email
 gem 'validates_email_format_of'
-
+# gema para el consumo de api externa
 gem "rest-client"
 
 
@@ -67,7 +67,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  # gema para previsualizar los emails
   gem "letter_opener"
 
   gem 'rspec-rails', '~> 6.0.0'
