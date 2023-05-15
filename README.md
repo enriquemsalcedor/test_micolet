@@ -5,10 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+** Ruby version **
 	ruby 3.2.2
 
-* Rails version
+** Rails version **
 	rails 7.0.4.3
 
 * Configuration
