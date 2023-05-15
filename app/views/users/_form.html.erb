@@ -1,0 +1,44 @@
+<%= form_with model: user, validate: true, remote: true do |form| %>
+
+<div class="global-container">
+  <div class="card micolet-form">
+    <div class="card-body">
+      <div>
+        <img src="<%= asset_path 'micolet.png' %>" class="img-micolet">
+      </div>
+      <div class="card-text">  
+        <div class="form-group">
+            <%= form.label t("activerecord.attributes.user.email"), style: "display: block"%>
+            <%= form.text_field :email, class: "form-control form-control-sm" %>
+        </div>
+        <%= form.label t("activerecord.attributes.user.preferences") %>
+        <div class="form-group">
+          
+          <% Preference.all.each do |preference| %>
+            <%= check_box_tag 'user[preference_ids][]',
+                              preference.id,
+                              user.preference_ids.include?(preference.id),
+                              class: "checkbox-check" %>
+            <%= preference.name %><br/>
+          <% end %>
+
+        </div>
+        <div style="text-align: center !important;">
+          <%= form.submit t("activerecord.actions.submit"), data: {disable_with: t("activerecord.actions.submit")}, class: "btn" %>
+        </div>
+        <% if user.errors.any? %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <div style="color: red">
+                <ul>
+                  <% user.errors.each do |error| %>
+                    <li><%= error.message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

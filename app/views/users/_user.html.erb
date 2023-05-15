@@ -1,0 +1,23 @@
+<div class="global-container">
+  <div class="card micolet-form">
+    <div class="fade show" role="alert">
+      <div>
+        <p style="color: green"><%= notice %></p>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-text">  
+        <div class="form-group">
+          <h2><%=user.email %></h2>
+        </div>
+        <strong><%= t("activerecord.attributes.user.preferences") %></strong>
+        <div class="form-group">
+          <% user.preferences.each do |preference| %>
+            <p><li><%= preference.name %></li></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

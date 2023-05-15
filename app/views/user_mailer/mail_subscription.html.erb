@@ -1,0 +1,25 @@
+
+<div class="global-container">
+  <h1>Subscription</h1>
+  <div class="card micolet-form">
+    <div class="card-body">
+      <div class="card-text">  
+        <div class="form-group">
+          <h2><p>Hello, <%= @user.email %></p></h2>
+        </div>
+        <strong>Your preferences</strong>
+        <div class="form-group">
+          <% @user.preferences.each do |preference| %>
+            <p><li><%= preference.name %></li></p>
+          <% end %>
+        </div>
+        <br>
+        <p>Do you want to answer a survey?</p>
+        <a href="<%= asset_path 'micolet.png' %>">CLICK HERE</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
