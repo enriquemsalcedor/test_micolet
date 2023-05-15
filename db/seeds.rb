@@ -11,3 +11,4 @@ Preference.create! [
   {name: 'Men´s fashion'},
   {name: 'Children´s fashion'},
 ]
+
